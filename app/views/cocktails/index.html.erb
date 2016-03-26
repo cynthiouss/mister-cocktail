@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cocktail list</h1>
+
+<table>
+  <tbody>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </tbody>
+</table>
+
+<br>
+
+<div class="text-center">
+  <%= link_to "Create your own cocktail", new_cocktail_path, class: "btn btn-primary" %>
+</div>
